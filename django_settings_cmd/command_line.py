@@ -6,9 +6,6 @@ def find_settings():
             return os.path.join(root, "settings.py")
     return None        
 
-def is_app_installed(content,app):
-    pass
-
 def enable_app():
     if( len(sys.argv) != 2 ):
         print("Expecting 1 app argument")
@@ -23,7 +20,6 @@ def enable_app():
                 f.close()
                 with open(settings,"w") as g:
                     g.write( newconfig )
-                print newconfig
         else:
             print( "Cannot locate a settings.py file. Make sure that current directory is a django project folder.")
 
@@ -40,8 +36,5 @@ def disable_app():
                 f.close()
                 with open(settings,"w") as g:
                     g.write( newconfig )
-                print newconfig
         else:
             print( "Cannot locate a settings.py file. Make sure that current directory is a django project folder.")
-        
-        pass
